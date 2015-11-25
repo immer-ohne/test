@@ -5,10 +5,11 @@ var express    	= 	require('express'),
 
 // Routes
 var newsRouter 		= require('./routes/newsRouter'),
-	kummerRouter	= require('./routes/kummerRouter');
+	kummerRouter	= require('./routes/kummerRouter'),
+	newsRouter		= require('./routes/newsRouter');
 
 // Init db
-//mongoose.connect(config.dbUrl);
+mongoose.connect(config.dbUrl);
 
 var app = express();
 
@@ -20,8 +21,9 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname + '/public'));
 
 // Mount & register routes
-//app.use('/api/news', newsRouter);
+app.use('/news', newsRouter);
 app.use('/kummer', kummerRouter);
+
 
 app.get('/', function(req, res){
 	res.render('pages/index');

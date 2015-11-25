@@ -1,0 +1,10 @@
+<% include ../partials/top %>
+<h2>Neuigkeiten</h2>
+<% newsList.forEach(function(news){ %>
+<div class="board">
+	<h3><%= news.heading %></h3>
+	<div class="board_msg"><%= news.text %></div>
+	<p class="date"><%= news.createdOn %></p>
+</div>
+<% }); %>
+<% include ../partials/bottom %>

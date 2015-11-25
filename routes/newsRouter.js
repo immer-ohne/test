@@ -8,7 +8,8 @@ newsRouter.route('/')
 			if(err)
 				res.status(500).send(err);
 
-			res.json(news);
+			//res.json(news);
+			res.render('pages/news', {newsList : news});
 		});
 	})
 	.post(function(req, res){
