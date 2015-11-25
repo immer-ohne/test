@@ -1,0 +1,212 @@
+/* =======================================
+COLORS
+
+	orange = rgba(255, 74, 0, 1)
+========================================== */
+
+
+/* =======================================
+FONTS
+========================================== */
+@font-face {
+	font-family: "under";
+	src: url("../fonts/MyUnderwood.ttf");
+}
+
+@font-face {
+	font-family: "comforta";
+	src: url("../fonts/Comfortaa-Regular.ttf");
+}
+
+
+
+body {
+	margin: 0;
+	background: #ccc url("../pics/heder.jpg") no-repeat;
+	background-attachment: fixed;
+	color: #eee;
+	font-family: "comforta";
+	font-size: 1.2em;
+	line-height: 1.2em;
+}
+
+
+
+h1 { /* img replacement */
+	//display: inline-block;
+	border: 0;
+	font: 0/0 a;
+	text-shadow: none;
+	color: transparent;
+	background: url("../pics/h1.png");
+	width: 746px;
+	height: 66px;
+}
+
+h2 {
+	font-family: "comforta";
+	font-size: 1.4em;
+}
+
+a {
+	text-decoration: none;
+}
+
+/* =======================================
+WRAPPER
+========================================== */
+
+#wrapper {
+	margin: 10px auto;
+	padding: 10px;
+	width: 800px;
+
+}
+
+
+
+
+/* =======================================
+NAV
+========================================== */
+
+nav {
+	display: inline;
+}
+
+nav ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+nav ul li {
+	display: inline;
+	margin: 0 10px 0 0;
+}
+
+nav ul li a {
+	font-family: "under"; 
+	font-size: 1.0em;
+	color: #fff;
+	padding: 5px;
+	text-shadow: 2px 2px #aaa;
+	transition: all 0.4s ease-in;
+}
+
+nav ul li a:hover{
+	color: tomato;
+	text-shadow: none;
+	border-bottom: 4px solid rgba(255, 74, 0, 1);
+}
+
+.act {
+	color: tomato;
+}
+
+.ifl { 
+	border: 5px solid #fff;
+	padding: 5px;
+	border-radius: 20px;
+}
+
+.fl { float: left; margin: 0 20px 20px 0;}
+
+.fr { float: right;}
+
+.clr{ clear: both; line-height: 0;}
+
+
+
+
+/* =======================================
+SECTION MAIN
+========================================== */
+section {
+	width: 780px;
+	background: rgba(0, 0, 0, 0.4);
+	border-radius: 20px;
+	padding: 10px;
+
+}
+section span { color: rgb(255, 74, 0);}
+.no { display: none;}
+
+
+/* =======================================
+KUMMERKASTEN
+========================================== */
+input, textarea {	
+	color:#999;
+	background:#fafafa;
+	padding:7px;
+	border: 3px solid #ccc;
+	border-radius: 10px;
+	width: 90%;
+	font-family: "comforta";
+	font-size: 1em;
+	margin: 0 0 10px 0;
+}
+
+input:focus, textarea:focus {
+	border: 3px solid tomato;
+}
+
+input[type="submit"] {
+	background: #ccc;
+	color: #000;
+	display: block;
+	border-radius: 8px;
+	margin: 10px 0 10px 0;
+	width: auto;
+	transition: all .4s ease-in;
+	
+}
+
+input[type="submit"]:hover {
+	background: tomato;
+	color: #fff;
+}
+
+/* =======================================
+NEWS
+========================================== */
+.board h3 {
+	text-decoration: underline;
+}
+p.date{
+	font-size: 0.6em;
+	clear: both;
+}
+
+/* =======================================
+BLACK
+========================================== */
+.blackEntry, .board {
+	padding: 5px;
+	border: 1px solid #ccc;
+	margin-bottom: 10px;
+}
+.blackEntry:nth-child(even), .board:nth-child(even) {
+	background: rgba(255, 74, 0, 0.2);
+}
+
+/* =======================================
+FOOTER
+========================================== */
+
+footer {
+	font-family: "under";
+	font-size: 0.6em;
+	text-align: center;
+	clear: both;
+}
+
+/* =======================================
+LOADER
+========================================== */
+#loader {
+	background: url("../pics/loader.gif") no-repeat center center;
+	width: 200px;
+	height: 200px;
+	margin: 50px 0 50px 290px;
+}
