@@ -4,7 +4,7 @@ var News = require('./../models/newsModel');
 
 newsRouter.route('/')
 	.get(function(req, res){
-		News.find(function(err, news){
+		News.find({}).sort('-createdOn').exec(function(err, news){
 			if(err)
 				res.status(500).send(err);
 
@@ -33,7 +33,8 @@ newsRouter.route('/:id')
 			if(err)
 				res.status(500).send(err);
 
-			res.json(news);
+			//res.json(news);
+			res.render('pages/news_one', {news: news});
 		});
 	})
 	.delete(function(req, res){

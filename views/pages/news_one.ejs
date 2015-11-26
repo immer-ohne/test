@@ -1,0 +1,5 @@
+<% include ../partials/top %>
+<h2><%- news.heading %></h2>
+<div class="board_msg"><%- news.text %></div>
+<p class="date"><%= news.createdOn.getDate() + '. ' + (news.createdOn.getMonth() + 1) + '. ' +  news.createdOn.getFullYear() %> geschrieben von: <%= news.createdBy %></p>
+<% include ../partials/bottom %>
