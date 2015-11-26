@@ -6,11 +6,12 @@
 	<textarea id="comment" placeholder="Deine Kommentar" name="comment" cols="30" rows="2" required></textarea>
 	<input type="submit" name="submit" value="Senden" />
 </form>
+<hr>
 <h3>Kommentare:</h3>
 <% 
 	comments.forEach(function(comm){ %>
 	<div class="board">
-		<div class="board_msg"><%= comm.comment %></div>
+		<div class="comment"><%= comm.comment %></div>
 	</div>
 <% }); %>
 <% include ../partials/bottom %>
