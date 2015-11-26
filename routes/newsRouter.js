@@ -34,7 +34,7 @@ newsRouter.route('/:id')
 				res.status(500).send(err);
 
 			//res.json(news);
-			res.render('pages/news_one', {news: news});
+			res.render('pages/news_one', {news: news, comments: news.comments});
 		});
 	})
 	.delete(function(req, res){
@@ -55,5 +55,16 @@ newsRouter.route('/:id')
 			res.json({msg: "News updated"});
 		});
 	});
+
+newsRouter.route('/:id/comment')
+	.post(function(req, res){
+		News.findByIdAndUpdate(req.params.id, {$push: {'comments':{'comment':req.body.comment, 'date': new Date(), 'active': true}}}, function(err, news){
+			if(err)
+				res.send(500, err);
+
+			res.redirect('/news/' + req.params.id);
+		});
+	});
+
 
 module.exports = newsRouter;

@@ -6,7 +6,8 @@ var newsSchema   = new Schema({
     text 		:   String,
     createdBy   :   String,
     createdOn   :   Date,
-    active		: 	{ type: Boolean, default: false }
+    active		: 	{ type: Boolean, default: false },
+    comments: [{ comment: String, date: Date, active: Boolean}]
 });
 
 newsSchema.pre('save', function(next){
