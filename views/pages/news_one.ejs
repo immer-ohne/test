@@ -2,6 +2,7 @@
 <h2><%- news.heading %></h2>
 <div class="board_msg"><%- news.text %></div>
 <p class="date">Am <%= news.createdOn.getDate() + '. ' + (news.createdOn.getMonth() + 1) + '. ' +  news.createdOn.getFullYear() %> geschrieben von: <%= news.createdBy %></p>
+<hr>
 <form action="/news/<%= news._id%>/comment" method="post">
 	<textarea id="comment" placeholder="Deine Kommentar" name="comment" cols="30" rows="2" required></textarea>
 	<input type="submit" name="submit" value="Senden" />

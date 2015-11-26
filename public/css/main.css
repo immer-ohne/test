@@ -123,7 +123,7 @@ SECTION MAIN
 ========================================== */
 section {
 	width: 780px;
-	background: rgba(0, 0, 0, 0.4);
+	background: rgba(0, 0, 0, 0.6);
 	border-radius: 20px;
 	padding: 10px;
 
@@ -172,6 +172,7 @@ NEWS
 ========================================== */
 .board h3 {
 	text-decoration: underline;
+	color: tomato;
 }
 p.date{
 	font-size: 0.6em;
