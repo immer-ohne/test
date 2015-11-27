@@ -3,7 +3,7 @@
 <% newsList.forEach(function(news){ %>
 <div class="board">
 	<h3><%- news.heading %></h3>
-	<div class="board_msg"><%- news.text %></div>
+	<div class="board_msg"><%- news.text.substring(0, 30) %></div>
 	<a class="lesen" href="/news/<%= news._id%>" title="Diese News lesen">&#10148; lesen</a>
 	<p class="date"><%= news.createdOn.getDate() + '. ' + (news.createdOn.getMonth() + 1) + '. ' +  news.createdOn.getFullYear() %></p>
 </div>
