@@ -22,7 +22,7 @@ FONTS
 
 body {
 	margin: 0;
-	background: #ccc url("../pics/heder.jpg") no-repeat;
+	background: #ccc url("../pics/back.jpg") no-repeat;
 	background-attachment: fixed;
 	color: #eee;
 	font-family: "comforta";
@@ -218,8 +218,26 @@ footer {
 LOADER
 ========================================== */
 #loader {
-	background: url("../pics/loader.gif") no-repeat center center;
-	width: 200px;
-	height: 200px;
-	margin: 50px 0 50px 290px;
+	background: url("../pics/rolling.svg") no-repeat center center;
+	width: 180px;
+	height: 180px;
+	margin: 20px auto;
+	/*animation:spin 1s infinite;
+	-webkit-animation:spin 1s infinite;
+	-moz-animation:spin 1s infinite; */
+}
+
+@keyframes spin {
+	from { transform:rotate(0deg); }
+	to { transform:rotate(360deg); }
+}
+
+@media only screen and (max-width: 768px) {
+    
+	h1{ font: 2em comforta; color: tomato; background: none; width: auto; height: auto;}
+    #wrapper { width: 100%;}
+    nav ul li {margin-right: 5px;}
+    section { width: 90%;}
+
+    
 }

@@ -1,0 +1,15 @@
+<div ng-if="kummer.showKummer">	
+	<h2>Kummerkasten</h2>
+	<ul>
+		<li>Wollt ihr irgend etwas loswerden?</li>
+		<li>Habt ihr einen Verbesserungsvorschlag?</li>
+		<li>Stört euch etwas bei der Arbeit?</li>
+	</ul>
+	<p>Dann seid ihr hier genau richtig!<br>Alles was ihr hier schreibt wir <span>nur</span> von eurem Vertrauensmitarbeiter gelesen. Euren Namen müsst ihr nicht angeben, falls ihr nicht wollt.</p>
+	<form ng-submit="kummer.sendMsg()">
+		<input type="text" placeholder="Dein Name (mit oder ohne)" name="name" ng-model="kummer.name">
+		<textarea id="message" placeholder="Deine Nachricht" name="message" ng-model="kummer.message" cols="50" rows="6" required></textarea>
+		<input type="submit" name="submit" value="Senden" />
+	</form>
+</div>
+<div id="loader" ng-if="kummer.processing"></div>

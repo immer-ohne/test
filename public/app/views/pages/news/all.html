@@ -1,0 +1,9 @@
+<h2>Neuigkeiten</h2>
+<div id="loader" ng-if="news.processing"></div>
+<div class="board" ng-repeat="n in news.newsList">
+	<h3>{{n.heading}}</h3>
+	<div class="board_msg" ng-bind="n.teaser"></div>
+	<a class="lesen" href="/news/{{n._id}}" title="Diese News lesen">&#10148; lesen</a>
+	<p class="date">{{n.createdOn | date:'d. M. yyyy'}}</p>
+</div>
+

@@ -1,0 +1,17 @@
+<div id="loader" ng-if="newsOne.processing"></div>
+<h2>{{newsOne.news.heading}}</h2>
+<div class="board_msg">{{newsOne.news.text}}</div>
+<p class="date">Am {{newsOne.news.createdOn | date : 'd. M. yyyy'}} geschrieben von: {{newsOne.news.author}}</p>
+<hr>
+<form ng-submit="newsOne.addComment()">
+	<textarea ng-model="newsOne.comment" placeholder="Dein Kommentar" name="comment" cols="30" rows="2" required></textarea>
+	<input type="submit" name="submit" value="Senden" />
+</form>
+<div ng-if="newsOne.news.comments.length">
+	<hr>
+	<h3>Kommentare: {{newsOne.news.comments.length}}</h3>
+
+	<div class="board" ng-repeat="com in newsOne.news.comments">
+		<div class="comment">{{com.comment}}</div>
+	</div>
+</div>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Immer Ohne!</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- FOR ANGULAR ROUTING -->
+	<base href="/">
+
+	<!-- CSS  -->
+	<link rel="stylesheet" href="assets/css/style.css">
+
+	<!-- JS -->
+	<!-- load angular and angular-route via CDN -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.min.js"></script>
+
+	<!-- controllers -->
+	<script src="app/controllers/problemCtrl.js"></script>
+	<script src="app/controllers/newsCtrl.js"></script>
+	<script src="app/controllers/kummerCtrl.js"></script>
+
+	<!-- services -->
+	<script src="app/services/problemService.js"></script>
+	<script src="app/services/newsService.js"></script>
+
+	<!-- main Angular app files -->
+	<script src="app/app.routes.js"></script>
+	<script src="app/app.js"></script>
+</head>
+<body ng-app="ioApp">
+
+	<div id="wrapper">		
+		<header>
+			<h1><span>...immer ohne!</span>&trade;</h1>
+			<nav>
+				<ul id="menu">
+					<li><a href="/" title="Startseite">home</a></li>
+					<li><a href="/news" title="Neuigkeiten">news</a></li>
+					<li><a href="/kontakt" title="Hast du Probleme?">kontakt</a></li>
+					<li><a href="/probleme" title="Punkte, die angesprochen werden sollten">vorschläge</a></li>
+				</ul>
+			</nav> 
+		</header>
+		<section ng-view></section>
+		<footer>
+			<p>2015 Schniauuu</p>
+		</footer>
+	</div>
+</body>
+</html>

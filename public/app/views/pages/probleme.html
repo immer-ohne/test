@@ -1,0 +1,13 @@
+<h2>Sachen über die man reden muss</h2>
+<form ng-submit="problem.sendProblem()">
+	<textarea id="message" placeholder="Dein Anliegen" name="message" ng-model="problem.message" cols="50" rows="3" required></textarea>
+	<input type="submit" name="submit" value="Senden" />
+</form>
+<div id="loader" ng-if="problem.processing"></div>
+<div ng-if="problem.problemList.length">
+	<hr>
+	<div class="board" ng-repeat="p in problem.problemList">
+		<div class="board_msg" ng-bind="p.text"></div>
+		<p class="date">{{p.createdOn | date:'d. M. yyyy'}}</p>
+	</div>
+</div>

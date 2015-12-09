@@ -11,12 +11,7 @@ var transporter = nodemailer.createTransport({
     }
 });
 
-kummerRouter.get('/', function(req, res){
-	res.render('pages/kummer');
-});
-
-kummerRouter.post('/send', function(req, res){
-	console.log("ha");
+kummerRouter.post('/', function(req, res){
 	var mailOptions = {
 	    from: 'cozimog@gmail.com', // sender address
 	    to: 'ccol@gmx.net', // list of receivers
@@ -26,11 +21,11 @@ kummerRouter.post('/send', function(req, res){
 
 	transporter.sendMail(mailOptions, function(error, info){
 	    if(error){
-	    	res.redirect('/fehler');
+	    	res.json({success : false});
 	        return console.log(error);
 	    }
 	    console.log('Message sent: ' + info.response);
-	    res.redirect('/danke');
+	    res.json({success : true});
 
 	});
 

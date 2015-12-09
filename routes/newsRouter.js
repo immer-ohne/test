@@ -1,6 +1,7 @@
 var express = require('express');
 var newsRouter = express.Router();
 var News = require('./../models/newsModel');
+var tokenMW = require('./tokenMW');
 
 newsRouter.route('/')
 	.get(function(req, res){
@@ -8,16 +9,16 @@ newsRouter.route('/')
 			if(err)
 				res.status(500).send(err);
 
-			//res.json(news);
-			res.render('pages/news', {newsList : news});
+			res.json(news);
+			//res.render('pages/news', {newsList : news});
 		});
 	})
 	.post(function(req, res){
 		var news = new News();
 		news.heading = req.body.heading;
+		news.teaser = req.body.teaser;
 		news.text = req.body.text;
-		news.createdBy = req.body.createdBy;
-		news.active = req.body.active;
+		news.author = req.body.author;
 
 		news.save(function(err){
 			if(err){
@@ -33,8 +34,8 @@ newsRouter.route('/:id')
 			if(err)
 				res.status(500).send(err);
 
-			//res.json(news);
-			res.render('pages/news_one', {news: news, comments: news.comments});
+			res.json(news);
+			//res.render('pages/news_one', {news: news, comments: news.comments});
 		});
 	})
 	.delete(function(req, res){
@@ -62,7 +63,8 @@ newsRouter.route('/:id/comment')
 			if(err)
 				res.send(500, err);
 
-			res.redirect('/news/' + req.params.id);
+			//res.redirect('/news/' + req.params.id);
+			res.json({msg: "Comment updated"});
 		});
 	});
 
